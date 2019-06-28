@@ -116,12 +116,6 @@ fi
 
 #CUSTOMIZATIONS START HERE
 
-# NVIDIA CUDA stuff
-export CUDA_HOME=/usr/local/cuda-7.5 
-export LD_LIBRARY_PATH=${CUDA_HOME}/lib64 
-PATH=${CUDA_HOME}/bin:${PATH} 
-export PATH 
-
 # set aliases
 alias open='xdg-open &>/dev/null'
 alias octave='octave --no-gui'
@@ -145,6 +139,3 @@ export EDITOR="$VISUAL"
 
 #customize ls colors
 LS_COLORS='di=1;37:fi=0:ln=31:pi=5:so=4:bd=1:cd=7:or=31;4:mi=31;4:ex=1;34'
-
-# added by Anaconda3 4.3.1 installer
-export PATH="/home/tim/anaconda3/bin:$PATH"
