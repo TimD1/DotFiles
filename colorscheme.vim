@@ -2,70 +2,68 @@ hi clear
 
 let g:colors_name = "custom"
 
-" Normal should come first
-hi Normal     guifg=Black  guibg=White
-hi Cursor     guifg=bg     guibg=fg
-hi lCursor    guifg=NONE   guibg=Cyan
+hi Normal     						ctermfg=255  		ctermbg=232
+hi Cursor     						ctermfg=bg     		ctermbg=fg
+hi lCursor    						ctermfg=NONE   		ctermbg=Cyan
 
-" Note: we never set 'term' because the defaults for B&W terminals are OK
-hi DiffAdd    ctermfg=10 ctermbg=LightBlue    guibg=LightBlue
-hi DiffChange ctermbg=LightMagenta guibg=LightMagenta
-hi DiffDelete ctermfg=Blue	   ctermbg=LightCyan gui=bold guifg=Blue guibg=LightCyan
-hi DiffText   ctermbg=Red	   cterm=bold gui=bold guibg=Red
-hi Directory  ctermfg=DarkBlue	   guifg=Blue
-hi ErrorMsg   ctermfg=White	   ctermbg=DarkRed  guibg=Red	    guifg=White
-hi FoldColumn ctermfg=DarkBlue	   ctermbg=Grey     guibg=Grey	    guifg=DarkBlue
-hi Folded     ctermbg=Grey	   ctermfg=DarkBlue guibg=LightGrey guifg=DarkBlue
-hi IncSearch  cterm=reverse	   gui=reverse
-hi ModeMsg    cterm=bold	   gui=bold
-hi MoreMsg    ctermfg=DarkGreen    gui=bold guifg=SeaGreen
-hi NonText    ctermfg=Blue	   gui=bold guifg=gray guibg=white
-hi Pmenu      guibg=LightBlue
-hi PmenuSel   ctermfg=White	   ctermbg=DarkBlue  guifg=White  guibg=DarkBlue
-hi Question   ctermfg=DarkGreen    gui=bold guifg=SeaGreen
+hi DiffAdd    						ctermfg=83			ctermbg=NONE
+hi DiffChange 						ctermfg=190			ctermbg=NONE
+hi DiffDelete 						ctermfg=160			ctermbg=NONE
+hi DiffText   	cterm=bold			ctermfg=190			ctermbg=NONE
+
+hi Directory  						ctermfg=DarkBlue	   
+hi ErrorMsg   						ctermfg=White	   	ctermbg=DarkRed  
+hi FoldColumn 						ctermfg=DarkBlue	ctermbg=Grey     
+hi Folded     						ctermfg=DarkBlue 	ctermbg=DarkBlue 
+hi IncSearch  	cterm=reverse	   
+hi ModeMsg    	cterm=bold	   
+hi MoreMsg    						ctermfg=DarkGreen    
+hi NonText    						ctermfg=Blue	   
+hi PmenuSel   						ctermfg=White	   	ctermbg=DarkBlue  
+hi Question   						ctermfg=DarkGreen    
 if &background == "light"
-    hi Search     ctermfg=NONE	   ctermbg=Yellow guibg=Yellow guifg=NONE
+    hi Search     					ctermfg=NONE		ctermbg=Yellow 
 else
-    hi Search     ctermfg=Black	   ctermbg=Yellow guibg=Yellow guifg=Black
+    hi Search     					ctermfg=Black		ctermbg=Yellow 
 endif
-hi SpecialKey ctermfg=DarkBlue	   guifg=Blue
-hi StatusLine cterm=bold	   ctermbg=blue ctermfg=yellow guibg=gold guifg=blue
-hi StatusLineNC	cterm=bold	   ctermbg=blue ctermfg=black  guibg=gold guifg=blue
-hi Title      ctermfg=DarkMagenta  gui=bold guifg=Magenta
-hi VertSplit  cterm=reverse	   gui=reverse
-hi Visual     ctermbg=NONE	   cterm=reverse gui=reverse guifg=Grey guibg=fg
-hi VisualNOS  cterm=underline,bold gui=underline,bold
-hi WarningMsg ctermfg=DarkRed	   guifg=Red
-hi WildMenu   ctermfg=Black	   ctermbg=Yellow    guibg=Yellow guifg=Black
+hi SpecialKey 						ctermfg=DarkBlue	   
+hi StatusLine 	cterm=bold	   		ctermfg=yellow 		ctermbg=blue 
+hi StatusLineNC	cterm=bold	   		ctermfg=black 		ctermbg=blue  
+hi Title      						ctermfg=DarkMagenta  
+hi VertSplit  	cterm=reverse	   
+hi Visual     	cterm=reverse							ctermbg=NONE
+hi VisualNOS  	cterm=underline,bold 
+hi WarningMsg 						ctermfg=DarkRed	   
+hi WildMenu   						ctermfg=Black	  	ctermbg=Yellow    
 
 "SYNTAX HIGHLIGHTING
 "basic appearance
-hi Comment    	cterm=italic	ctermfg=241  	guifg=gray
-hi LineNr     	cterm=NONE 		ctermfg=58	   	guifg=brown
+hi Comment    	cterm=italic		ctermfg=241
+hi LineNr     	cterm=NONE 			ctermfg=58
  
 "c++ preprocessor
-hi PreProc    	cterm=NONE 		ctermfg=161 	guifg=pink
-hi Define		cterm=NONE		ctermfg=161		guifg=pink
-hi Macro		cterm=NONE		ctermfg=161		guifg=pink
+hi PreProc    	cterm=NONE 			ctermfg=160
+hi Define		cterm=NONE			ctermfg=161
+hi Macro		cterm=NONE			ctermfg=163
 
 "code data types
-hi Constant   	cterm=NONE 		ctermfg=145   	guifg=lightgray
-hi String		cterm=NONE		ctermfg=128		guifg=purple
-hi Character	cterm=NONE		ctermfg=126		guifg=lightpurple
-hi Number		cterm=NONE		ctermfg=196		guifg=red
-hi Boolean		cterm=NONE		ctermfg=76		guifg=green
+hi Constant   	cterm=NONE 			ctermfg=145
+hi String		cterm=NONE			ctermfg=129
+hi Character	cterm=NONE			ctermfg=125
+hi Number		cterm=NONE			ctermfg=147
+hi Boolean		cterm=NONE			ctermfg=76	
 
 "code control flow
-hi Type	      	cterm=NONE 		ctermfg=63		guifg=blue
-hi Statement  	cterm=NONE 		ctermfg=214		guifg=orange
-hi Conditional 	cterm=NONE 		ctermfg=214		guifg=orange
-hi Function		cterm=NONE		ctermfg=248 	guifg=lightgray
+hi Type	      	cterm=NONE 			ctermfg=63
+hi Statement  	cterm=NONE 			ctermfg=214
+hi Conditional 	cterm=NONE 			ctermfg=214
+hi Function		cterm=NONE			ctermfg=248
 
 "LaTeX math environment
-hi Delimiter	cterm=NONE		ctermfg=196		guifg=red
-hi Operator		cterm=NONE		ctermfg=196		guifg=red
-hi Special    	cterm=NONE 		ctermfg=196   	guifg=red
+hi Delimiter	cterm=NONE			ctermfg=196
+hi Operator		cterm=NONE			ctermfg=198
+hi Special    	cterm=NONE 			ctermfg=201
 
 "other, unused
-hi Directory	cterm=NONE		ctermfg=63		guifg=blue
-hi Identifier 	cterm=NONE 		ctermfg=77   	guifg=green
+hi Directory	cterm=NONE			ctermfg=63
+hi Identifier 	cterm=NONE 			ctermfg=77
