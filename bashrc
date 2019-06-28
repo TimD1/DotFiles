@@ -139,6 +139,10 @@ force_color_prompt=yes							# color!
 export PS1="$HC$FRED[><]$FWHT\w$FRED[><]$RS " 	# sets command prompt
 export TERM=xterm-256color 						# allow color in "screen"
 
+# choose vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 #customize ls colors
 LS_COLORS='di=1;37:fi=0:ln=31:pi=5:so=4:bd=1:cd=7:or=31;4:mi=31;4:ex=1;34'
 

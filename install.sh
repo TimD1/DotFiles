@@ -17,14 +17,23 @@ git clone https://github.com/scrooloose/nerdtree	# tree fileviewer
 git clone https://github.com/sirver/ultisnips		# expansion shortcuts
 git clone https://github.com/tpope/vim-fugitive		# git integration
 git clone https://github.com/itchyny/lightline.vim	# aesthetics
+git clone https://github.com/tpope/vim-repeat		# plugin cmds now repeatable
 
-# set up custom vim colorschemes
-
+# set up custom vim colorscheme
+mkdir ~/.vim/colors
+cp colorscheme.vim ~/.vim/colors/custom.vim
 
 ###############
 # INSTALL GIT #
 ###############
 sudo apt install git
+git config --global user.name "Tim Dunn"
+git config --global user.email "me.timd1@gmail.com"
+git config --global core.editor vim
+git config --global credential.helper store
+git config --global alias.mt mergetool
+git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
+git config --global merge.tool fugitive
 
 ##################
 # INSTALL PYTHON #
@@ -34,5 +43,5 @@ sudo apt install git
 ###################
 # CREATE DOTFILES #
 ###################
-cp ./.bashrc ~/.bashrc
-cp ./.vimrc ~/.vimrc
+cp ./bashrc ~/.bashrc
+cp ./vimrc ~/.vimrc
