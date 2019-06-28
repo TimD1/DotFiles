@@ -41,7 +41,16 @@ git config --global merge.tool fugitive
 ##################
 # INSTALL PYTHON #
 ##################
-# python and anaconda
+sudo apt install python python3 python-pip
+sudo pip install numpy opencv-python
+
+###################
+# SET UP SSH KEYS #
+###################
+if [ ! -f ~/.ssh/id_rsa.pub ]; then 
+	ssh-keygen -t rsa
+fi
+# ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 
 ###################
 # CREATE DOTFILES #
