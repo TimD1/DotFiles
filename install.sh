@@ -18,9 +18,12 @@ git clone https://github.com/sirver/ultisnips		# expansion shortcuts
 git clone https://github.com/tpope/vim-fugitive		# git integration
 git clone https://github.com/itchyny/lightline.vim	# aesthetics
 git clone https://github.com/tpope/vim-repeat		# plugin cmds now repeatable
+git clone git://github.com/altercation/vim-colors-solarized.git	# colorscheme
 
 # set up custom vim colorscheme
 mkdir ~/.vim/colors
+cp vim-colors-solarized/colors/solarized.vim ~/.vim/colors
+cd -
 cp colorscheme.vim ~/.vim/colors/custom.vim
 
 ###############

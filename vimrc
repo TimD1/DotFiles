@@ -42,10 +42,27 @@ autocmd FileType php set commentstring=<!--\ %s\ -->
 set colorcolumn=81
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
-" set gitgutter preferences
+" make gitgutter update more frequently
 set updatetime=100
-"let g:gitgutter_override_sign_column_highlight = 0
 
+" set custom mappings for fugitive
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap gdk :diffget //2<CR>
+nnoremap gdj :diffget //3<CR>
+
+" use lightline
+set laststatus=2
+set cmdheight=1
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
 
 " execute plugin manager
 execute pathogen#infect()
