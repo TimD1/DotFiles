@@ -19,7 +19,7 @@ function! NumberToggle()
 		set number
 	endif
 endfunc
-nnoremap <C-n> :call NumberToggle()<cr>
+nnoremap <c-n> :call NumberToggle()<cr>
 
 " set my colorscheme, adjust to filetype
 set t_Co=256
@@ -46,9 +46,9 @@ highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set updatetime=100
 
 " set custom mappings for fugitive
-nnoremap <leader>gd :Gdiff<CR>
-nnoremap gdk :diffget //2<CR>
-nnoremap gdj :diffget //3<CR>
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap gdk :diffget //2<cr>
+nnoremap gdj :diffget //3<cr>
 
 " use lightline
 set laststatus=2
@@ -69,6 +69,8 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+nnoremap <c-\<bar>> :split<cr>
+nnoremap <c-_> :vsplit<cr>
 set splitbelow
 set splitright
 

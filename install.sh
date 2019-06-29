@@ -1,5 +1,6 @@
 #!/bin/bash
 
+INSTALL_PATH=`pwd`
 ###############
 # INSTALL VIM #
 ###############
@@ -19,8 +20,10 @@ git clone https://github.com/tpope/vim-fugitive		# git integration
 git clone https://github.com/itchyny/lightline.vim	# aesthetics
 git clone https://github.com/tpope/vim-repeat		# plugin cmds now repeatable
 git clone https://github.com/junegunn/fzf.git		# fuzzy text finder
+https://github.com/christoomey/vim-tmux-navigator	# vim-tmux navigation
 git clone https://github.com/junegunn/fzf.vim.git	# fzf vim integration
 source fzf/install --no-fish --no-zsh
+cd $INSTALL_PATH
 
 # set up custom vim colorscheme
 mkdir ~/.vim/colors
@@ -65,6 +68,7 @@ fi
 ###################
 # CREATE DOTFILES #
 ###################
-cp ./bashrc ~/.bashrc
-cp ./vimrc ~/.vimrc
+cp bashrc ~/.bashrc
+cp vimrc ~/.vimrc
 cp fzf.bash ~/.fzf.bash
+cp tmux.conf ~/.tmux.conf
