@@ -12,6 +12,7 @@ curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 
 # install packages
 cd ~/.vim/bundle
+git clone https://github.com/christoomey/vim-tmux-navigator	# vim-tmux nav
 git clone https://github.com/tpope/vim-commentary	# easy commenting
 git clone https://github.com/tpope/vim-surround		# editing shortcuts
 git clone https://github.com/scrooloose/nerdtree	# tree fileviewer
@@ -19,11 +20,12 @@ git clone https://github.com/sirver/ultisnips		# expansion shortcuts
 git clone https://github.com/tpope/vim-fugitive		# git integration
 git clone https://github.com/itchyny/lightline.vim	# aesthetics
 git clone https://github.com/tpope/vim-repeat		# plugin cmds now repeatable
+git clone https://github.com/w0rp/ale				# c syntax checker
 git clone https://github.com/junegunn/fzf.git		# fuzzy text finder
-https://github.com/christoomey/vim-tmux-navigator	# vim-tmux navigation
 git clone https://github.com/junegunn/fzf.vim.git	# fzf vim integration
 source fzf/install --no-fish --no-zsh
 cd $INSTALL_PATH
+cp -r UltiSnips ~/.vim
 
 # set up custom vim colorscheme
 mkdir ~/.vim/colors

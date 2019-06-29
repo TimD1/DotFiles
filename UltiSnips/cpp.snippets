@@ -1,0 +1,16 @@
+snippet inc "include cpp header" b
+#include <${1:iostream}>
+endsnippet
+
+snippet class "class" b
+class ${1:Class}{
+public:
+	// constructors, assignment, destructor
+	$1();
+	$1(const $1&);
+	$1& operator=(const $1&);
+	~$1():
+private:
+	$2
+};
+endsnippet

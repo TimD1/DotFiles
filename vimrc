@@ -4,6 +4,7 @@ set autoindent
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set backspace=indent,eol,start
 
 " set default line numbering
 set relativenumber
@@ -69,10 +70,20 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
-nnoremap <c-\<bar>> :split<cr>
-nnoremap <c-_> :vsplit<cr>
+nnoremap <c-|> :split 
+nnoremap <c-_> :vsplit 
 set splitbelow
 set splitright
+
+" ulti-snips configuration
+let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
+let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
+let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsListSnippets="<leader>l"
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<leader>j"
+let g:UltiSnipsJumpBackwardTrigger="<leader>k"
 
 " execute plugin manager
 execute pathogen#infect()
