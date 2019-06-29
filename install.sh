@@ -39,11 +39,19 @@ git config --global alias.mt mergetool
 git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
 git config --global merge.tool fugitive
 
+
+################
+# INSTALL TMUX #
+################
+sudo apt install tmux
+
+
 ##################
 # INSTALL PYTHON #
 ##################
 sudo apt install python python3 python-pip
 sudo pip install numpy opencv-python
+
 
 ###################
 # SET UP SSH KEYS #
@@ -53,8 +61,10 @@ if [ ! -f ~/.ssh/id_rsa.pub ]; then
 fi
 # ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 
+
 ###################
 # CREATE DOTFILES #
 ###################
 cp ./bashrc ~/.bashrc
 cp ./vimrc ~/.vimrc
+cp fzf.bash ~/.fzf.bash
