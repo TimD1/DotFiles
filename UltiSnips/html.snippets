@@ -1,0 +1,57 @@
+snippet a "<a> link" w
+<a href="${1:https://www.${2:url.com}}"${3: target="_blank"}>${4:Anchor Text}</a>
+endsnippet
+
+snippet p "paragraph" w
+<p>${0:${VISUAL}}</p>
+endsnippet
+
+snippet b "<b>" w
+<b>$1</b>
+endsnippet
+
+snippet i "<i>" w
+<i>$1</i>
+endsnippet
+
+snippet img "<img>"
+<img src="$1" alt="$2">
+endsnippet
+
+snippet h1 "HTML <h1>" w
+<h1>${0:${VISUAL}}</h1>
+endsnippet
+
+snippet h2 "HTML <h2>" w
+<h2>${0:${VISUAL}}</h2>
+endsnippet
+
+snippet h3 "HTML <h3>" w
+<h3>${0:${VISUAL}}</h3>
+endsnippet
+
+snippet h4 "HTML <h4>" w
+<h4>${0:${VISUAL}}</h4>
+endsnippet
+
+snippet h5 "HTML <h5>" w
+<h5>${0:${VISUAL}}</h5>
+endsnippet
+
+snippet h6 "HTML <h6>" w
+<h6>${0:${VISUAL}}</h6>
+endsnippet
+
+snippet html "HTML basic structure" b
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>${1}</title>
+	</head>
+	<body>
+		${0:body}
+	</body>
+</html>
+endsnippet
