@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 
 INSTALL_PATH=`pwd`
 ###############
@@ -74,3 +74,4 @@ cp bashrc ~/.bashrc
 cp vimrc ~/.vimrc
 cp fzf.bash ~/.fzf.bash
 cp tmux.conf ~/.tmux.conf
+source ~/.bashrc
