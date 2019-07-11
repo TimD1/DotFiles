@@ -43,7 +43,9 @@ cd $INSTALL_PATH
 cp -r UltiSnips ~/.vim
 
 # set up custom vim colorscheme
-[ ! -d "~/.vim/colors"] && mkdir ~/.vim/colors
+if [ ! -d "~/.vim/colors" ] ; then
+	mkdir ~/.vim/colors
+fi
 cp colorscheme.vim ~/.vim/colors/custom.vim
 
 
