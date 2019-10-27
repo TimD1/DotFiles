@@ -21,22 +21,17 @@ VIM_PLUGIN_REPOS=(
 	tpope/vim-surround				# editing shortcuts
 	scrooloose/nerdtree				# tree fileviewer
 	sirver/ultisnips				# expansion shortcuts
+	airblade/vim-gitgutter			# show git changes
 	tpope/vim-fugitive				# git integration
 	itchyny/lightline.vim			# aesthetics
 	tpope/vim-repeat				# plugin cmds now repeatable
 	w0rp/ale						# c syntax checker
-	junegunn/fzf					# fuzzy text finder
-	junegunn/fzf.vim				# fzf vim integration
 )
 for owner_repo in "${VIM_PLUGIN_REPOS[@]}"
 do
 	repo="$(cut -d "/" -f 2 <<< $owner_repo)"
 	[ ! -d "$repo" ] && git clone "https://github.com/$owner_repo.git"
 done
-
-# install fzf, then continue this script regardless of success
-sed -i -e 's/exit/return/g' fzf/install > fzf/install
-source fzf/install --no-fish --no-zsh || true
 
 # copy ultisnips snippets
 cd $INSTALL_PATH
@@ -102,7 +97,6 @@ fi
 echo "Installing all dotfiles..."
 cp bashrc ~/.bashrc
 cp vimrc ~/.vimrc
-cp fzf.bash ~/.fzf.bash
 cp tmux.conf ~/.tmux.conf
 source ~/.bashrc
 echo "Success!"
