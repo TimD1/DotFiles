@@ -56,6 +56,7 @@ git config --global credential.helper store
 git config --global alias.mt mergetool
 git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
 git config --global merge.tool fugitive
+sudo snap install hub --classic
 
 
 ################
@@ -84,10 +85,10 @@ echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 ###################
 # SET UP SSH KEYS #
 ###################
-echo "Setting up ssh keys..."
-if [ ! -f ~/.ssh/id_rsa.pub ]; then 
-	ssh-keygen -t rsa
-fi
+# echo "Setting up ssh keys..."
+# if [ ! -f ~/.ssh/id_rsa.pub ]; then
+# ssh-keygen -t rsa
+# fi
 # ssh-copy-id -i ~/.ssh/id_rsa.pub user@host
 
 

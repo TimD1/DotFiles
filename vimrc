@@ -50,6 +50,8 @@ set updatetime=100
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap gdk :diffget //2<cr>
 nnoremap gdj :diffget //3<cr>
+nnoremap gdh :diffget //2<cr>
+nnoremap gdl :diffget //3<cr>
 
 " use lightline
 set laststatus=2
