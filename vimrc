@@ -24,6 +24,7 @@ nnoremap <c-n> :call NumberToggle()<cr>
 
 " set my colorscheme, adjust to filetype
 set t_Co=256
+set term=screen-256color
 syntax on
 set background=dark
 colorscheme custom
@@ -74,6 +75,9 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 set splitbelow
 set splitright
+
+" easy buffer listing
+nnoremap gb :ls<CR>:b<Space>
 
 " ulti-snips configuration
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"

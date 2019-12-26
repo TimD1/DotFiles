@@ -2,6 +2,22 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+
+###############
+# INSTALL GIT #
+###############
+echo "Installing and configuring git..."
+sudo apt install -y git
+git config --global user.name "Tim Dunn"
+git config --global user.email "me.timd1@gmail.com"
+git config --global core.editor vim
+git config --global credential.helper store
+git config --global alias.mt mergetool
+git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
+git config --global merge.tool fugitive
+sudo snap install hub --classic
+
+
 INSTALL_PATH=`pwd`
 ###############
 # INSTALL VIM #
@@ -38,25 +54,8 @@ cd $INSTALL_PATH
 cp -r UltiSnips ~/.vim
 
 # set up custom vim colorscheme
-if [ ! -d "~/.vim/colors" ] ; then
-	mkdir ~/.vim/colors
-fi
+mkdir -p ~/.vim/colors
 cp colorscheme.vim ~/.vim/colors/custom.vim
-
-
-###############
-# INSTALL GIT #
-###############
-echo "Installing and configuring git..."
-sudo apt install -y git
-git config --global user.name "Tim Dunn"
-git config --global user.email "me.timd1@gmail.com"
-git config --global core.editor vim
-git config --global credential.helper store
-git config --global alias.mt mergetool
-git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
-git config --global merge.tool fugitive
-sudo snap install hub --classic
 
 
 ################

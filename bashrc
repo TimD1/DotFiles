@@ -70,6 +70,7 @@ alias term='gnome-terminal'
 alias gitlog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 alias g++='g++ -g -std=c++11'
 alias gss='gcc -S -masm=intel -fno-asynchronous-unwind-tables'
+alias tmux='tmux -2'
 
 # customize command prompt
 RS="\[\033[0m\]"    							# reset
