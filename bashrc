@@ -71,6 +71,8 @@ alias gitlog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short
 alias g++='g++ -g -std=c++11'
 alias gss='gcc -S -masm=intel -fno-asynchronous-unwind-tables'
 alias tmux='tmux -2'
+alias v='cd ~/Documents/notes/programming/verilog'
+alias g='cd ~/Documents/notes/genome_sequencing'
 
 # customize command prompt
 RS="\[\033[0m\]"    							# reset

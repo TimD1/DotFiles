@@ -24,7 +24,6 @@ nnoremap <c-n> :call NumberToggle()<cr>
 
 " set my colorscheme, adjust to filetype
 set t_Co=256
-set term=screen-256color
 syntax on
 set background=dark
 colorscheme custom
@@ -47,13 +46,6 @@ highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 " make gitgutter update more frequently
 set updatetime=100
 
-" set custom mappings for fugitive
-nnoremap <leader>gd :Gdiff<cr>
-nnoremap gdk :diffget //2<cr>
-nnoremap gdj :diffget //3<cr>
-nnoremap gdh :diffget //2<cr>
-nnoremap gdl :diffget //3<cr>
-
 " use lightline
 set laststatus=2
 set cmdheight=1
@@ -68,6 +60,16 @@ let g:lightline = {
       \ },
       \ }
 
+" set leader key
+let mapleader=";"
+
+" set custom mappings for fugitive
+nnoremap <leader>gd :Gdiff<cr>
+nnoremap gdk :diffget //2<cr>
+nnoremap gdj :diffget //3<cr>
+nnoremap gdh :diffget //2<cr>
+nnoremap gdl :diffget //3<cr>
+
 " split-pane navigation remaps
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
@@ -77,7 +79,20 @@ set splitbelow
 set splitright
 
 " easy buffer listing
-nnoremap gb :ls<CR>:b<Space>
+nnoremap <leader>b :w<CR>:ls<CR>:b<Space>
+
+" NERD tree toggle
+nnoremap <leader>n :NERDTreeToggle<CR>
+
+" UltiSnips editing
+nnoremap <leader>ue :UltiSnipsEdit<CR>
+set iskeyword-=(
+set iskeyword-=)
+
+" easy tex compilation and biber compilation
+nnoremap <leader>tc :!pdflatex main.tex<CR>
+nnoremap <leader>bc :!biber main<CR>
+nnoremap <leader>vc :w :!verilator -Wall +1364-2001ext+v -y . --lint-only %<CR>
 
 " ulti-snips configuration
 let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
