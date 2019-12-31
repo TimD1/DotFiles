@@ -1,3 +1,0 @@
-gimp
-pithos
-simple screen recorder

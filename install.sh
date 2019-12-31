@@ -58,25 +58,19 @@ mkdir -p ~/.vim/colors
 cp colorscheme.vim ~/.vim/colors/custom.vim
 
 
-################
-# INSTALL TMUX #
-################
-echo "Installing and configuring tmux..."
-sudo apt install -y tmux
-
-
 ##################
 # INSTALL PYTHON #
 ##################
 echo "Installing and configuring python..."
-sudo apt install -y python python3 python-pip
-sudo pip install numpy opencv-python
+sudo apt install -y python3 python3-pip
+sudo python3 -m pip install numpy opencv-python
 
 
-###################
-# UPGRADE GDB/GEF #
-###################
-echo "Installing and configuring gdb/gef..."
+####################
+# INSTALL PACKAGES #
+####################
+echo "Installing packages..."
+sudo apt install -y tmux gimp htop texlive-full pithos simplescreenrecorder
 wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
