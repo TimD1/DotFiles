@@ -1,0 +1,55 @@
+# chapters and sections
+snippet c "chapter" b
+\chapter{${1:${VISUAL:name}}}
+$0
+endsnippet
+
+snippet s "section" b
+\section{${1:${VISUAL:name}}}
+$0
+endsnippet
+
+snippet ss "subsection" b
+\subsection{${1:${VISUAL:name}}}
+$0
+endsnippet
+
+snippet sss "subsubsection" b
+\subsubsection{${1:${VISUAL:name}}}
+$0
+endsnippet
+
+# text modifications
+snippet b "bold" w
+\textbf{${1:${VISUAL:name}}}$0
+endsnippet
+
+snippet t "code text" w
+\texttt{${1:${VISUAL:name}}}$0
+endsnippet
+
+snippet i "italic text" w
+\texttt{${1:${VISUAL:name}}}$0
+endsnippet
+
+snippet code "creates code environment" b
+\begin{lstlisting}
+${1:code}
+\end{lstlisting}
+$0
+endsnippet
+
+snippet div1 "creates a small comment divider" b
+%-------------------------------------------------------------------------------
+$0
+endsnippet
+
+snippet div2 "creates a medium comment divider" b
+%===============================================================================
+$0
+endsnippet
+
+snippet div3 "creates a large comment divider" b
+%|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+$0
+endsnippet
