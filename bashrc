@@ -65,8 +65,6 @@ fi
 
 # set aliases
 alias open='xdg-open &>/dev/null'
-alias octave='octave --no-gui'
-alias term='gnome-terminal'
 alias gitlog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 alias g++='g++ -g -std=c++11'
 alias gss='gcc -S -masm=intel -fno-asynchronous-unwind-tables'
@@ -81,7 +79,7 @@ FRED="\[\033[31m\]" 							# foreground red
 FWHT="\[\033[37m\]" 							# foreground white
 force_color_prompt=yes							# color!
 export PS1="$HC$FRED[><]$FWHT\w$FRED[><]$RS " 	# sets command prompt
-export TERM=xterm-256color 						# allow color in "screen"
+export TERM=tmux-256color 						# allow color in tmux
 
 # choose vim as default editor
 export VISUAL=vim

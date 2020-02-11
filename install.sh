@@ -70,7 +70,8 @@ sudo python3 -m pip install numpy opencv-python
 # INSTALL PACKAGES #
 ####################
 echo "Installing packages..."
-sudo apt install -y tmux gimp htop texlive-full pithos simplescreenrecorder
+sudo apt install -y tmux gimp htop texlive-full pithos 
+#sudo apt install -y simplescreenrecorder
 wget -O ~/.gdbinit-gef.py -q https://github.com/hugsy/gef/raw/master/gef.py
 echo source ~/.gdbinit-gef.py >> ~/.gdbinit
 
