@@ -2,6 +2,7 @@
 filetype indent on
 set autoindent
 set smartindent
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set backspace=indent,eol,start
@@ -15,9 +16,11 @@ function! NumberToggle()
 	if (&relativenumber == 1 && &number == 1)
 		set norelativenumber
 		set nonumber
+        GitGutterDisable
 	else
 		set relativenumber
 		set number
+        GitGutterEnable
 	endif
 endfunc
 nnoremap <c-n> :call NumberToggle()<cr>
