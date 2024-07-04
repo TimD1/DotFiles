@@ -1,7 +1,3 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
-# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
-# for examples
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -66,20 +62,16 @@ fi
 # set aliases
 alias open='xdg-open &>/dev/null'
 alias gitlog='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
-alias g++='g++ -g -std=c++11'
-alias gss='gcc -S -masm=intel -fno-asynchronous-unwind-tables'
 alias tmux='tmux -2'
-alias v='cd ~/Documents/notes/programming/verilog'
-alias g='cd ~/Documents/notes/genome_sequencing'
 
 # customize command prompt
-RS="\[\033[0m\]"    							# reset
-HC="\[\033[1m\]"    							# hicolor
-FRED="\[\033[31m\]" 							# foreground red
-FWHT="\[\033[37m\]" 							# foreground white
-force_color_prompt=yes							# color!
-export PS1="$HC$FRED[><]$FWHT\w$FRED[><]$RS " 	# sets command prompt
-export TERM=tmux-256color 						# allow color in tmux
+RS="\[\033[0m\]"    				# reset
+HC="\[\033[1m\]"    				# hicolor
+FRED="\[\033[31m\]" 				# foreground red
+FWHT="\[\033[37m\]" 				# foreground white
+force_color_prompt=yes				# color!
+export PS1="$HC$FRED[$FWHT\w$FRED]$RS " 	# sets command prompt
+export TERM=tmux-256color 			# allow color in tmux
 
 # choose vim as default editor
 export VISUAL=vim

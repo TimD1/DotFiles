@@ -42,8 +42,8 @@ autocmd FileType bib set commentstring=%\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 autocmd FileType php set commentstring=<!--\ %s\ -->
 
-" set color of 80th column as reminder for line break
-set colorcolumn=81
+" set color of 100th column as reminder for line break
+set colorcolumn=101
 highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 
 " make gitgutter update more frequently
@@ -86,26 +86,6 @@ nnoremap <leader>b :w<CR>:ls<CR>:b<Space>
 
 " NERD tree toggle
 nnoremap <leader>n :NERDTreeToggle<CR>
-
-" UltiSnips editing
-nnoremap <leader>ue :UltiSnipsEdit<CR>
-set iskeyword-=(
-set iskeyword-=)
-
-" easy tex compilation and biber compilation
-nnoremap <leader>tc :!pdflatex main.tex<CR>
-nnoremap <leader>bc :!biber main<CR>
-nnoremap <leader>vc :w :!verilator -Wall +1364-2001ext+v -y . --lint-only %<CR>
-
-" ulti-snips configuration
-let g:UltiSnipsSnippetsDir="~/.vim/UltiSnips"
-let g:UltiSnipsSnippetDirectories=["~/.vim/UltiSnips"]
-let g:UltiSnipsEditSplit="vertical"
-
-let g:UltiSnipsListSnippets="<leader>l"
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<leader>j"
-let g:UltiSnipsJumpBackwardTrigger="<leader>k"
 
 " execute plugin manager
 execute pathogen#infect()
