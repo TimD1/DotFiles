@@ -2,32 +2,35 @@
 set -euo pipefail
 IFS=$'\n\t'
 
+email="tjdunn18@gmail.com"
 
-###############
-# INSTALL GIT #
-###############
-echo "Installing and configuring git..."
-sudo apt install -y git
+#################
+# CONFIGURE GIT #
+#################
+echo "git version: $(git --version)"
 git config --global user.name "Tim Dunn"
-git config --global user.email "tjdunn18@gmail.com"
+git config --global user.email "$email"
 git config --global core.editor vim
-git config --global credential.helper store
+# use fugitive for resolving merge conflicts
 git config --global alias.mt mergetool
 git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
 git config --global merge.tool fugitive
+# use ssh keys to sign git commits
+ssh-keygen -t ed25519 -C "$email" -N "" -f "id" >> /dev/null
+mv id > ~/.ssh; mv id.pub ~/.ssh
+git config --global gpg.format ssh
+git config --global commit.gpgsign true
+git config --global user.signingkey ~/.ssh/id.pub
+echo "git ssh/signing key (upload this): $(cat ~/.ssh/id.pub)"
 
-INSTALL_PATH=`pwd`
-###############
-# INSTALL VIM #
-###############
-echo "Installing and configuring vim..."
-sudo apt install -y vim curl sed tmux htop
-
+#################
+# CONFIGURE VIM #
+#################
+echo "vim version: $(vim --version | head -n 1)"
 # install pathogen
-mkdir -p ~/.vim/autoload ~/.vim/bundle
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
-
 # install vim plugins
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 cd ~/.vim/bundle
 VIM_PLUGIN_REPOS=(
 	christoomey/vim-tmux-navigator	# vim-tmux nav
@@ -38,7 +41,7 @@ VIM_PLUGIN_REPOS=(
 	tpope/vim-fugitive		        # git integration
 	itchyny/lightline.vim		    # aesthetics
 	tpope/vim-repeat		        # plugin cmds now repeatable
-	w0rp/ale			            # c syntax checker
+	w0rp/ale			            # syntax checker
 )
 for owner_repo in "${VIM_PLUGIN_REPOS[@]}"
 do
@@ -46,18 +49,16 @@ do
 	[ ! -d "$repo" ] && git clone "https://github.com/$owner_repo.git"
 done
 cd -
-
 # set up custom vim colorscheme
 mkdir -p ~/.vim/colors
 cp colorscheme.vim ~/.vim/colors/custom.vim
 
-
 ###################
 # CREATE DOTFILES #
 ###################
-echo "Installing all dotfiles..."
+echo "installing dotfiles..."
 cp bashrc ~/.bashrc
 cp vimrc ~/.vimrc
 cp tmux.conf ~/.tmux.conf
 source ~/.bashrc
-echo "Success!"
+echo "source ~/.bashrc" >> ~/.bash_profile
