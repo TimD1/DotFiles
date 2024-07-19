@@ -15,7 +15,7 @@ git config --global core.editor vim
 git config --global alias.mt mergetool
 git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
 git config --global merge.tool fugitive
-# use ssh keys to sign git commits
+# use ssh keys to sign commits
 ssh-keygen -t ed25519 -C "$email" -N "" -f "id" >> /dev/null
 mv id > ~/.ssh; mv id.pub ~/.ssh
 git config --global gpg.format ssh
