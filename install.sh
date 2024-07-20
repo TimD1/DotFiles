@@ -49,9 +49,8 @@ do
 	[ ! -d "$repo" ] && git clone "https://github.com/$owner_repo.git"
 done
 cd -
-# set up custom vim colorscheme
-mkdir -p ~/.vim/colors
-cp colorscheme.vim ~/.vim/colors/custom.vim
+# set up custom vim colorscheme and syntax files
+cp -r vim/* ~./vim
 
 ###################
 # CREATE DOTFILES #
