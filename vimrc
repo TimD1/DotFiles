@@ -41,6 +41,7 @@ autocmd FileType tex set commentstring=%\ %s
 autocmd FileType bib set commentstring=%\ %s
 autocmd FileType html set commentstring=<!--\ %s\ -->
 autocmd FileType php set commentstring=<!--\ %s\ -->
+autocmd FileType vim set commentstring=\"\ %s
 
 " set color of 100th column as reminder for line break
 set colorcolumn=101
