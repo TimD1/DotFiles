@@ -53,6 +53,7 @@ set updatetime=100
 " use lightline
 set laststatus=2
 set cmdheight=1
+let g:ale_echo_msg_format = '%linter%: %s'
 let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ 'active': {
