@@ -50,7 +50,7 @@ do
 done
 cd -
 # set up custom vim colorscheme and syntax files
-cp -r vim/* ~./vim
+cp -r vim/* ~/.vim
 
 ###################
 # CREATE DOTFILES #
