@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -euxo pipefail
 IFS=$'\n\t'
 
 email="tjdunn18@gmail.com"
@@ -16,8 +16,8 @@ git config --global alias.mt mergetool
 git config --global mergetool.fugitive.cmd 'vim -f -c "Gvdiff" "$MERGED"'
 git config --global merge.tool fugitive
 # use ssh keys to sign commits
-ssh-keygen -t ed25519 -C "$email" -N "" -f "id" >> /dev/null
-mv id > ~/.ssh; mv id.pub ~/.ssh
+ssh-keygen -t ed25519 -C "$email" -N "" -f "id"
+mv id ~/.ssh; mv id.pub ~/.ssh
 git config --global gpg.format ssh
 git config --global commit.gpgsign true
 git config --global user.signingkey ~/.ssh/id.pub
@@ -27,10 +27,10 @@ echo "git ssh/signing key (upload this): $(cat ~/.ssh/id.pub)"
 # CONFIGURE VIM #
 #################
 echo "vim version: $(vim --version | head -n 1)"
+mkdir -p ~/.vim/autoload ~/.vim/bundle
 # install pathogen
 curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 # install vim plugins
-mkdir -p ~/.vim/autoload ~/.vim/bundle
 cd ~/.vim/bundle
 VIM_PLUGIN_REPOS=(
 	christoomey/vim-tmux-navigator	# vim-tmux nav
